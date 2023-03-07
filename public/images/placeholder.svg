@@ -1,0 +1,18 @@
+<svg width="165" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 165 16" preserveAspectRatio="none">
+      <defs>
+        <style type="text/css">
+          #holder text {
+            fill: #000000;
+            font-family: sans-serif;
+            font-size: 12px;
+            font-weight: 300;
+          }
+        </style>
+      </defs>
+      <g id="holder">
+        <rect width="100%" height="100%" fill="#9576f2"></rect>
+        <g>
+          <text text-anchor="middle" x="50%" y="50%" dy=".3em">165 x 16</text>
+        </g>
+      </g>
+    </svg>
