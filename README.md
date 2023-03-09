@@ -7,12 +7,17 @@
 
 ### Features
 * Authentication (Login, Register, Logout)
-* Edit users
+[//]: # (* Edit users)
 * Schedule appointments (working time)
 
 ### Todos
 
-- Alot
+*[ ] Employer can add employees
+*[ ] Employer can edit employees
+*[ ] Employer can delete employees
+*[ ] Employer can add working time
+*[ ] Employer can edit working time
+*[ ] Employer can delete working time
 
 License
 ----

@@ -27,5 +27,5 @@ Route::post('login', [SessionsController::class, 'store'])->middleware('guest');
 Route::post('logout', [SessionsController::class, 'destroy'])->middleware('auth');
 
 // Registration
-Route::get('register', [RegisterController::class, 'create'])->middleware('guest');
-Route::post('register', [RegisterController::class, 'store'])->middleware('guest');
+Route::get('register', [RegisterController::class, 'create'])->middleware('can:admin'); // <- only admins may register (employees)
+Route::post('register', [RegisterController::class, 'store'])->middleware('can:admin'); // <- only admins may register (employees)

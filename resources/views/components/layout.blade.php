@@ -4,7 +4,7 @@
     {{-- Meta information --}}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+{{--    <meta name="csrf-token" content="{{ csrf_token() }}">--}}
     <meta name="description" content="Laravel From Scratch Blog">
     <meta name="author" content="Yigit Findik">
 
@@ -39,7 +39,9 @@
     <nav class="md:flex md:justify-between md:items-center">
         <div>
             <a href="/">
-                <img src="{{ asset('images/placeholder.svg') }}" alt="NY's Employee Scheduler placeholder" width="165"
+                <img src="{{ asset('images/placeholder.svg') }}"
+                     alt="NY's Employee Scheduler placeholder"
+                     width="165"
                      height="16">
             </a>
         </div>
@@ -52,10 +54,10 @@
                     </x-slot>
 
                     @admin
-                        <x-dropdown-item href="/admin/posts">Dashboard</x-dropdown-item>
-                        <x-dropdown-item href="/admin/posts/create" :active="request()->is('admin/posts/create')">New Post</x-dropdown-item>
-                        <!-- TODO: we must fix this problem but not priority right now -->
-                        <a href="/register" class="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700">Register</a>
+                        <x-dropdown-item href="/dashboard">Dashboard</x-dropdown-item>
+{{--                        <x-dropdown-item href="/admin/posts">Dashboard</x-dropdown-item>--}}
+{{--                        <x-dropdown-item href="/admin/posts/create" :active="request()->is('admin/posts/create')">New Post</x-dropdown-item>--}}
+                        <x-dropdown-item href="/register">Register</x-dropdown-item>
                     @endadmin
 
                     <x-dropdown-item href="#" x-data="{}"
