@@ -5,17 +5,6 @@ use App\Http\Controllers\ScheduleController;
 use App\Http\Controllers\SessionsController;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
-
 // Home
 Route::get('/', [ScheduleController::class, 'index'])->name('home');
 
@@ -26,6 +15,14 @@ Route::post('login', [SessionsController::class, 'store'])->middleware('guest');
 // Logout
 Route::post('logout', [SessionsController::class, 'destroy'])->middleware('auth');
 
-// Registration
-Route::get('register', [RegisterController::class, 'create'])->middleware('can:admin'); // <- only admins may register (employees)
-Route::post('register', [RegisterController::class, 'store'])->middleware('can:admin'); // <- only admins may register (employees)
+// Admin routes
+Route::middleware('can:admin')->group(function () {
+    /** TODO: Add admin routes here
+     * Registration
+     * Route::get('register', [RegisterController::class, 'create']);
+     * Route::post('register', [RegisterController::class, 'store']);
+     */
+});
+// FOR TESTING
+Route::get('register', [RegisterController::class, 'create'])->middleware('guest');
+Route::post('register', [RegisterController::class, 'store'])->middleware('guest');

@@ -26,11 +26,11 @@ class AppServiceProvider extends ServiceProvider
         Model::unguard();
 
         Gate::define('admin', function (User $user) {
-            return $user->username === 'YigitFindik'; //could be any user you desire
+            return $user->role_id === 1; // 1 is the id of the admin role
         });
 
         Blade::if('admin', function () {
-            return request()->user()?->can('admin');
+            return auth()->check() && auth()->user()->can('admin');
         });
     }
 }
