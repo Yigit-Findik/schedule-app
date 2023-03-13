@@ -17,12 +17,6 @@ Route::post('logout', [SessionsController::class, 'destroy'])->middleware('auth'
 
 // Admin routes
 Route::middleware('can:admin')->group(function () {
-    /** TODO: Add admin routes here
-     * Registration
-     * Route::get('register', [RegisterController::class, 'create']);
-     * Route::post('register', [RegisterController::class, 'store']);
-     */
+      Route::get('register', [RegisterController::class, 'create']);
+      Route::post('register', [RegisterController::class, 'store']);
 });
-// FOR TESTING
-Route::get('register', [RegisterController::class, 'create'])->middleware('guest');
-Route::post('register', [RegisterController::class, 'store'])->middleware('guest');

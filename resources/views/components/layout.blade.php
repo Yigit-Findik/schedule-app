@@ -48,26 +48,29 @@
 
         <div class="mt-8 md:mt-0 flex items-center">
             @auth
+                <div class="pr-2 mr-2">
+                    <img class="w-8 h-8 rounded-full" src="{{ asset('storage/' . auth()->user()->profile_thumbnail) }}" alt="user photo">
+                </div>
                 <x-dropdown>
-                    <x-slot name="trigger">
+                    <x-slot name="trigger" class="flex items-center">
                         <button class="text-xs font-bold uppercase">Welcome, {{ auth()->user()->name }}</button>
                     </x-slot>
 
                     @admin
                         <x-dropdown-item href="/dashboard">Dashboard</x-dropdown-item>
+                        <x-dropdown-item href="/register">Register</x-dropdown-item>
                     @endadmin
 
                     <x-dropdown-item href="#" x-data="{}"
                                      @click.prevent="document.querySelector('#logout-form').submit()">Log Out
                     </x-dropdown-item>
 
+
                     <form id="logout-form" method="POST" action="/logout" class="hidden">
                         @csrf
                     </form>
                 </x-dropdown>
             @else
-                <x-dropdown-item href="/register">Register</x-dropdown-item>
-
                 <a href="/login" class="px-4 py-2 ml-4 text-sm text-gray-700 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700">Login</a>
             @endguest
         </div>

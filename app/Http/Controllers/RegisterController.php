@@ -30,9 +30,6 @@ public function create()
         $attributes['profile_thumbnail'] = request()->file('profile_thumbnail')->store('profile_thumbnails');
         $user = User::create($attributes);
 
-        // After creating the user, log the user in
-        auth()->login($user);
-
         return redirect('/')->with('success', 'Your account has been created!');
     }
 }
