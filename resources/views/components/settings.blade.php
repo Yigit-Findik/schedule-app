@@ -10,13 +10,13 @@
             <h4 class="font-semibold mb-4">Links</h4>
             <ul>
                 <li>
-                    <a href="/admin/posts"
-                       class="{{ request()->is('admin/posts') ? 'text-blue-500' : '' }}">All Employees</a>
+                    <a href="/admin/{{ route('admin.register.create') }}"
+                       class="{{ request()->is('admin/register') ? 'text-blue-500' : '' }}">Register User</a>
                 </li>
-                <li>
-                    <a href="/admin/posts/create"
-                       class="{{ request()->is('admin/posts/create') ? 'text-blue-500' : '' }}">New Post</a>
-                </li>
+{{--                <li>--}}
+{{--                    <a href="/admin/register"--}}
+{{--                       class="{{ request()->is('admin/posts') ? 'text-blue-500' : '' }}">All Employees</a>--}}
+{{--                </li>--}}
             </ul>
         </aside>
     </div>
