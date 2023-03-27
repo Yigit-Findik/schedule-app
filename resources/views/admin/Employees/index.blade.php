@@ -7,25 +7,23 @@
                         <table class="min-w-full divide-y divide-gray-200">
                             <tbody class="bg-white divide-y divide-gray-200">
                             @if (count($users))
-                                @foreach ($posts as $post)
+                                @foreach ($users as $user)
                                     <tr>
                                         <td class="px-6 py-4 whitespace-nowrap">
                                             <div class="flex items-center">
                                                 <div class="text-sm font-medium text-gray-900">
-                                                    <a href="/posts/{{ $post->slug }}">
-                                                        {{ $post->title }}
-                                                    </a>
+                                                    <a href="#">a tag here</a>
                                                 </div>
                                             </div>
                                         </td>
 
                                         <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                            <a href="/admin/posts/{{ $post->id }}/edit"
+                                            <a href="/admin/employees/{{ $user->id }}/edit"
                                                class="text-blue-500 hover:text-blue-600">Edit</a>
                                         </td>
 
                                         <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                            <form method="POST" action="/admin/posts/{{ $post->id }}">
+                                            <form method="POST" action="/admin/employee/{{ $user->id }}">
                                                 @csrf
                                                 @method('DELETE')
 
@@ -36,7 +34,7 @@
                                 @endforeach
                             @else
                                 <x-panel>
-                                    <p class="text-center">No posts, safe delete not implemented.</p>
+                                    <p class="text-center">No users, safe delete not implemented.</p>
                                 </x-panel>
                             @endif
                             </tbody>

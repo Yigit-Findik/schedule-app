@@ -3,6 +3,7 @@
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ScheduleController;
 use App\Http\Controllers\SessionsController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 // Home
@@ -24,5 +25,5 @@ Route::middleware('can:admin')->group(function () {
     Route::get('admin/register', [RegisterController::class, 'create'])->name('admin.register.create');
     Route::post('admin/register', [RegisterController::class, 'store'])->name('admin.register.store');
 
-    Route::get('admin/employees', [AdminController::class, 'index'])->name('admin.employees.index');
+    Route::get('admin/employees', [UserController::class, 'index'])->name('admin.employees.index');
 });
