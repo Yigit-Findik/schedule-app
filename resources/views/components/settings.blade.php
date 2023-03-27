@@ -13,10 +13,14 @@
                     <a href="/admin/{{ route('admin.register.create') }}"
                        class="{{ request()->is('admin/register') ? 'text-blue-500' : '' }}">Register User</a>
                 </li>
-{{--                <li>--}}
-{{--                    <a href="/admin/register"--}}
-{{--                       class="{{ request()->is('admin/posts') ? 'text-blue-500' : '' }}">All Employees</a>--}}
-{{--                </li>--}}
+                <li>
+                    <a href="/admin/{{ route('') }}"
+                       class="{{ request()->is('#') ? 'text-blue-500' : '' }}">All Employees</a>
+                </li>
+                <li>
+                    <a href="#"
+                       class="{{ request()->is('#') ? 'text-blue-500' : '' }}">All Shifts </a>
+                </li>
             </ul>
         </aside>
     </div>

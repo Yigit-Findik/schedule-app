@@ -46,8 +46,14 @@ class User extends Authenticatable
     ];
 
     // mutator for password
-    public function setPasswordAttribute($password)
-    {
+    public function setPasswordAttribute($password) {
         $this->attributes['password'] = bcrypt($password);
+    }
+
+    /**
+     * Shifts relationship
+     */
+    public function shifts() {
+        return $this->hasMany(Shifts::class);
     }
 }

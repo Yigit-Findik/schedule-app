@@ -23,4 +23,6 @@ Route::middleware('can:admin')->group(function () {
      */
     Route::get('admin/register', [RegisterController::class, 'create'])->name('admin.register.create');
     Route::post('admin/register', [RegisterController::class, 'store'])->name('admin.register.store');
+
+    Route::get('admin/employees', [AdminController::class, 'index'])->name('admin.employees.index');
 });
