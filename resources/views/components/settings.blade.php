@@ -11,12 +11,12 @@
             <h4 class="font-semibold mb-4">Links</h4>
             <ul>
                 <li>
-                    <a href="/admin/register"
-                       class="{{ request()->is('admin/register') ? 'text-blue-500' : '' }}">Register User</a>
+                    <a href="/admin/employees"
+                       class="{{ request()->is('admin/employees') ? 'text-blue-500' : '' }}">Employees</a>
                 </li>
                 <li>
-                    <a href="/admin/employees"
-                       class="{{ request()->is('admin/employees') ? 'text-blue-500' : '' }}">All Employees</a>
+                    <a href="/admin/register"
+                       class="{{ request()->is('admin/register') ? 'text-blue-500' : '' }}">Register User</a>
                 </li>
                 <li>
                     <a href="#"
