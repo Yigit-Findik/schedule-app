@@ -19,8 +19,8 @@
                        class="{{ request()->is('admin/register') ? 'text-blue-500' : '' }}">Register User</a>
                 </li>
                 <li>
-                    <a href="#"
-                       class="{{ request()->is('#') ? 'text-blue-500' : '' }}">All Shifts </a>
+                    <a href="/admin/shifts"
+                       class="{{ request()->is('admin/shifts') ? 'text-blue-500' : '' }}">All Shifts </a>
                 </li>
             </ul>
         </aside>

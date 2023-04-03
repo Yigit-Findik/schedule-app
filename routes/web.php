@@ -3,6 +3,7 @@
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ScheduleController;
 use App\Http\Controllers\SessionsController;
+use App\Http\Controllers\ShiftController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -28,5 +29,7 @@ Route::middleware('can:admin')->group(function () {
     Route::get('admin/employees', [UserController::class, 'index'])->name('admin.employees.index');
     Route::get('admin/employees/{user}', [UserController::class, 'show']);
     Route::get('admin/employees/{user}/edit', [UserController::class, 'edit'])->name('admin.employees.edit');
+
+    Route::get('admin/shifts', [ShiftController::class, 'index'])->name('admin.shifts.index');
 
 });
