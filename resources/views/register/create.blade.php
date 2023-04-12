@@ -1,6 +1,6 @@
 <x-layout>
     <x-settings heading="Register New Employee">
-        <form method="POST" action="/register" enctype="multipart/form-data">
+        <form method="POST" action="/admin/register" enctype="multipart/form-data">
             @csrf
             <x-form.input name="name" type="text" autocomplete="name"/>
             <x-form.input name="username" type="text" autocomplete="username"/>

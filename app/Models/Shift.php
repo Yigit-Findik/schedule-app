@@ -11,6 +11,7 @@ class Shift extends Model
 
     protected $fillable = [
         'user_id',
+        'name',
         'date',
         'start_time',
         'end_time'
@@ -19,7 +20,12 @@ class Shift extends Model
     /**
      * User relationship
      */
-    public function user() {
-        return $this->belongsTo(User::class);
+//    public function user() {
+//        return $this->belongsTo(User::class);
+//    }
+
+    public function user()
+    {
+        return $this->hasOne(User::class, 'id', 'user_id');
     }
 }

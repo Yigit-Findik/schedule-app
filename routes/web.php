@@ -30,6 +30,16 @@ Route::middleware('can:admin')->group(function () {
     Route::get('admin/employees/{user}', [UserController::class, 'show']);
     Route::get('admin/employees/{user}/edit', [UserController::class, 'edit'])->name('admin.employees.edit');
 
-    Route::get('admin/shifts', [ShiftController::class, 'index'])->name('admin.shifts.index');
 
+
+    Route::get('admin/shifts', [ShiftController::class, 'index'])->name('admin.shifts.index');
+    Route::get('admin/shifts/{shift}/edit', [ShiftController::class, 'edit'])->name('admin.shifts.edit');
+    Route::post('admin/shifts', [ShiftController::class, 'store'])->name('admin.shifts.store');
+    Route::PATCH('admin/shifts/{shift}', [ShiftController::class, 'update'])->name('admin.shifts.update');
+
+    Route::resource('admin/shifts', ShiftController::class)->except('show');
 });
+
+//test for if reset all data
+//Route::get('admin/register', [RegisterController::class, 'create'])->name('admin.register.create');
+//Route::post('admin/register', [RegisterController::class, 'store'])->name('admin.register.store');
