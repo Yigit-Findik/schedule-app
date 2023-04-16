@@ -23,7 +23,7 @@
                 </label>
                 <input type="text" class="border border-gray-400 p-2 w-full" name="name" id="name" value="{{ $shift->name }}" required>
                 @error('name')
-                <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
+                    <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
                 @enderror
             </div>
             <div class="mb-6">

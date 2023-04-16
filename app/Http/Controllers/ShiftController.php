@@ -17,6 +17,28 @@ class ShiftController extends Controller
         return view('admin.shifts.index', compact('shifts'));
     }
 
+    public function create()
+    {
+        $users = User::all();
+
+        return view('admin.shifts.create', compact('users'));
+    }
+
+    public function store()
+    {
+        $attributes = request()->validate([
+            'user_id' => 'required|exists:users,id',
+            'name' => 'max:255',
+            'start_time' => 'date_format:H:i:s',
+            'end_time' => 'date_format:H:i:s',
+            'date' => 'date_format:Y-m-d',
+        ]);
+        
+        Shift::create($attributes);
+
+        return redirect('/admin/shifts')->with('success', 'Shift created!');
+    }
+
     public function edit(Shift $shift)
     {
         $users = User::all();

@@ -15,9 +15,14 @@
                 </select>
             </x-form.field>
             <x-form.input name="password" type="password" autocomplete="new-password"/>
-            <x-form.button>
-                Register
-            </x-form.button>
+            <div class="flex justify-between items-center">
+                <x-form.button class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded">
+                    Register
+                </x-form.button>
+                <a href="employees" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded">
+                    Back
+                </a>
+            </div>
         </form>
     </x-settings>
 </x-layout>

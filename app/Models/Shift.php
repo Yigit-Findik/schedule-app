@@ -20,10 +20,6 @@ class Shift extends Model
     /**
      * User relationship
      */
-//    public function user() {
-//        return $this->belongsTo(User::class);
-//    }
-
     public function user()
     {
         return $this->hasOne(User::class, 'id', 'user_id');
