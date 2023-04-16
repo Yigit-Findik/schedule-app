@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [ScheduleController::class, 'index'])->name('home');
 
 // Login
-Route::get('login', [SessionsController::class, 'create'])->middleware('guest');
+Route::get('login', [SessionsController::class, 'create'])->middleware('guest')->name('login');
 Route::post('login', [SessionsController::class, 'store'])->middleware('guest');
 
 // Logout
@@ -27,8 +27,8 @@ Route::middleware('can:admin')->group(function () {
     Route::post('admin/register', [RegisterController::class, 'store'])->name('admin.register.store');
 
     Route::get('admin/employees', [UserController::class, 'index'])->name('admin.employees.index');
-    Route::get('admin/employees/{user}', [UserController::class, 'show']);
     Route::get('admin/employees/{user}/edit', [UserController::class, 'edit'])->name('admin.employees.edit');
+    Route::patch('admin/employees/{user}', [UserController::class, 'update'])->name('admin.employees.update');
     Route::delete('admin/employees/{user}', [UserController::class, 'destroy'])->name('admin.employees.destroy');
 
     Route::resource('admin/shifts', ShiftController::class)->except('show');
