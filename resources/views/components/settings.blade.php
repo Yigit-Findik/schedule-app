@@ -11,12 +11,13 @@
                 <h4 class="font-semibold mb-4">Links</h4>
                 <ul>
                     <li>
+                        <!-- TODO: add another request to edit route of admin -->
                         <a href="/admin/employees"
                            class="{{ request()->is('admin/employees') || request()->is('admin/register') ? 'text-blue-500' : '' }}">Employees</a>
                     </li>
                     <li>
                         <a href="/admin/shifts"
-                           class="{{ request()->is('admin/shifts') || request()->is('admin/shifts/create')? 'text-blue-500' : '' }}">All Shifts </a>
+                           class="{{ request()->is('admin/shifts') || request()->is('admin/shifts/create') ? 'text-blue-500' : '' }}">All Shifts </a>
                     </li>
                 </ul>
             </aside>

@@ -11,8 +11,6 @@ class ShiftController extends Controller
     public function index()
     {
         $shifts = Shift::all();
-        //access to the user relationship
-
 
         return view('admin.shifts.index', compact('shifts'));
     }
@@ -29,11 +27,11 @@ class ShiftController extends Controller
         $attributes = request()->validate([
             'user_id' => 'required|exists:users,id',
             'name' => 'max:255',
-            'start_time' => 'date_format:H:i:s',
-            'end_time' => 'date_format:H:i:s',
+            'start_time' => 'date_format:H:i',
+            'end_time' => 'date_format:H:i',
             'date' => 'date_format:Y-m-d',
         ]);
-        
+
         Shift::create($attributes);
 
         return redirect('/admin/shifts')->with('success', 'Shift created!');
@@ -54,10 +52,7 @@ class ShiftController extends Controller
             'start_time' => 'date_format:H:i:s',
             'end_time' => 'date_format:H:i:s',
             'date' => 'date_format:Y-m-d',
-//            'user_id' => 'required|exists:users,id'
         ]);
-//
-//        dd($attributes);
 
         $shift->update($attributes);
 

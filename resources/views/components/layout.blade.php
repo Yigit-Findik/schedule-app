@@ -55,7 +55,7 @@
                     </x-slot>
 
                     @admin
-                        <x-dropdown-item href="{{ route('admin.register.create') }}">Dashboard</x-dropdown-item>
+                        <x-dropdown-item href="/admin/employees">Dashboard</x-dropdown-item>
                         <x-dropdown-item href="{{ route('admin.register.create') }}">Register</x-dropdown-item> <!-- TODO: route isn't correct I'm still working on this -->
                     @endadmin
 

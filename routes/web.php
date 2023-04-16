@@ -31,12 +31,6 @@ Route::middleware('can:admin')->group(function () {
     Route::get('admin/employees/{user}/edit', [UserController::class, 'edit'])->name('admin.employees.edit');
     Route::delete('admin/employees/{user}', [UserController::class, 'destroy'])->name('admin.employees.destroy');
 
-    Route::get('admin/shifts', [ShiftController::class, 'index'])->name('admin.shifts.index');
-    Route::get('admin/shifts/{shift}/edit', [ShiftController::class, 'edit'])->name('admin.shifts.edit');
-    Route::get('admin/shifts/create', [ShiftController::class, 'create'])->name('admin.shifts.create');
-    Route::post('admin/shifts', [ShiftController::class, 'store'])->name('admin.shifts.store');
-    Route::PATCH('admin/shifts/{shift}', [ShiftController::class, 'update'])->name('admin.shifts.update');
-
     Route::resource('admin/shifts', ShiftController::class)->except('show');
 });
 
