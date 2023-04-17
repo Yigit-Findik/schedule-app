@@ -7,17 +7,21 @@
 
 ### Features
 * Authentication (Login, Register, Logout)
-[//]: # (* Edit users)
-* Schedule appointments (working time)
+* Edit users
+* Schedule appointments (working time)/Shifts
 
 ### Todos
 
-*[ ] Employer can add employees
-*[ ] Employer can edit employees
-*[ ] Employer can delete employees
-*[ ] Employer can add working time
-*[ ] Employer can edit working time
+*[x] Employer can add employees
+*[x] Employer can edit employees
+*[x] Employer can delete employees
+*[x] Employer can add working time
+*[x] Employer can edit working time
 *[ ] Employer can delete working time
+
+### Known problems
+* some styling need to be fixed
+* Can't change profile picture in edit users
 
 License
 ----
