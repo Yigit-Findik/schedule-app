@@ -12,7 +12,7 @@
 
 ### Todos
 
-*[x] Employer can add employees
+*[X] Employer can add employees
 *[x] Employer can edit employees
 *[x] Employer can delete employees
 *[x] Employer can add working time
@@ -21,7 +21,8 @@
 
 ### Known problems
 * some styling need to be fixed
-* Can't change profile picture in edit users
+* can't change profile picture in edit users
+* 
 
 License
 ----
