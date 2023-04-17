@@ -56,4 +56,11 @@ class User extends Authenticatable
     public function shifts() {
         return $this->hasMany(Shifts::class);
     }
+
+    /**
+     * Role relationship
+     */
+    public function role() {
+        return $this->belongsTo(Role::class);
+    }
 }
