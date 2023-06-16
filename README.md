@@ -17,7 +17,8 @@
 *[x] Employer can delete employees
 *[x] Employer can add working time
 *[x] Employer can edit working time
-*[ ] Employer can delete working time
+*[x] Employer can delete working time
+*[ ] figure out how full calendar works and implement
 
 ### Known problems
 * Some styling need to be fixed
